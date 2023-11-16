@@ -1,0 +1,15 @@
+{
+  "name": "puppeteer_tests",
+  "version": "1.0.0",
+  "description": "tests in puppeteer",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Markus Maal",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^21.5.2"
+  }
+}
