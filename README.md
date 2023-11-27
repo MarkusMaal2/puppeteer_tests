@@ -40,8 +40,8 @@ Sooritasin UI testid [Google](https://www.google.ee) jaoks. Testides kontrollita
     * Välistava filtri kasutamine - sisestades mingi märksõna ning jättes teatud märksõnad välja lisades neile "-" prefiksi, ei tohiks otsingulehele jääda tulemusi, mis sisaldavad välistatud märksõnu
         1. Külastame Google.com lehte
         2. Leiame üles otsinguvälja
-        3. Sisestame märksõnad "windows -os -microsoft" ja vajutame sisestusklahvi
-        4. Veendume, et leheküljel ei ole märksõnu "os" ja "microsoft" v.a. pealkirjas ja otsinguväljal
+        3. Sisestame märksõnad "puppeteer -testing" ja vajutame sisestusklahvi
+        4. Veendume, et leheküljel ei ole märksõna "testing" v.a. pealkirjas ja otsinguväljal
     * Tsitaatfiltri kasutamine - sisestades märksõnad jutumärkide vahele, peaksid otsingulehel olevad tulemused sisaldama sisestatud tsitaati
         1. Külastame Google.com lehte
         2. Leiame üles otsinguvälja

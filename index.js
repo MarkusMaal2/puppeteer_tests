@@ -128,6 +128,30 @@ const Test2 = async (page) => {
     }
 }
 
+const Test3 = async (page) => {
+    // TEST 3: Otsing filtritega
+    // 3.1: Välistava filtri kasutamine
+    try {
+        // Külastame Google.ee lehte
+        await page.goto("https://www.google.ee");
+
+        // Leiame üles otsinguvälja
+        const element = await page.waitForSelector('textarea');
+        // Sisestame märksõnad "puppeteer -testing" ja vajutame sisestusklahvi
+        await element.type("puppeteer -testing");
+        await new Promise(r => setTimeout(r, 500));
+        await page.keyboard.press("Enter");
+        await new Promise(r => setTimeout(r, 2000));
+        // Veendume, et leheküljel ei ole märksõna "testing" v.a. pealkirjas ja otsinguväljal
+        const pCount = await page.evaluate(() => {
+            return document.body.innerText.match(/testing/g)?document.body.innerText.match(/testing/g).length:0
+        })
+        assert.equal(pCount <= 2, true);
+    } catch (err) {
+        console.log(err);
+    }
+}
+
 (async () => {
     const browser = await puppeteer.launch({headless: false});
     const page = await browser.newPage();
@@ -135,8 +159,9 @@ const Test2 = async (page) => {
     page.setDefaultTimeout(timeout)
     await page.goto("https://www.google.ee");
     await Cookies(page);
-    //await Test1(page);
+    await Test1(page);
     await Test2(page);
+    await Test3(page);
 // Sule brauser
-    //browser.close();
+    browser.close();
 })();
