@@ -10,6 +10,7 @@
   "author": "Markus Maal",
   "license": "ISC",
   "dependencies": {
+    "expect-puppeteer": "^9.0.1",
     "puppeteer": "^21.5.2"
   }
 }
