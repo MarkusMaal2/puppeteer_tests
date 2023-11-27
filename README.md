@@ -22,8 +22,8 @@ Sooritasin UI testid [Google](https://www.google.ee) jaoks. Testides kontrollita
         1. Leiame üles otsinguvälja
         2. Sisestame märksõna "Puppeteer" ja vajutame sisestusklahvi
         3. Kontrollime, et märksõna oleks veebilehe pealkirjas ja otsinguväljal
-        4. Klõpsame esimesel tulemusel
-        5. Veendume, et märksõnaga otsinguvälja poleks veebilehel ja Google poleks mainitud lehe pealkirjas
+        4. Avame esimese tulemuse
+        5. Veendume, et Google poleks mainitud lehe pealkirjas
 2. Pildiotsing
     * Pildiotsingusse sisenemine - klõpsates "Pildid" siselingil peaksime jõudma "Google pildid" lehele
         1. Külastame Google.com lehte ja veendume, et see on korrektselt laaditud, seejärel nõustume küpsistega klõpsates "Nõustu kõigiga" nuppu
