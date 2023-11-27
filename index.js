@@ -1,10 +1,7 @@
 import puppeteer from "puppeteer";
 import * as assert from "assert";
 
-
-
-const Test1 = async (page) => {
-    // TEST 1: Tavalise otsingu sooritamine
+const Cookies = async (page) => {
     // 1.1 Küpsistega nõustumine - küpsistega nõustudes peaks veebilehe uuesti laadimisel aken mitte ilmuma
     try {
         // Läheme Google.ee lehele
@@ -29,6 +26,10 @@ const Test1 = async (page) => {
     } catch (err) {
         console.log(err);
     }
+}
+
+const Test1 = async (page) => {
+    // TEST 1: Tavalise otsingu sooritamine
     // 1.2 Märksõnaga otsimine
     try {
         // Leiame üles otsinguvälja
@@ -99,6 +100,32 @@ const Test2 = async (page) => {
     } catch (err) {
         console.log(err);
     }
+    // 2.2: Märksõnaga otsimine
+    try {
+        // Külastame Google.ee lehte
+        await page.goto("https://www.google.ee");
+        // Leiame üles "Pildid" siselingi ja klõpsame seda
+        const [picLink] = await page.$x("//a[contains(., 'Pildid')]");
+        if (picLink) {
+            await picLink.click();
+        }
+        // Leiame üles otsinguvälja
+        const element = await page.waitForSelector('textarea');
+        // Sisestame märksõna "Puppeteer" ja vajutame sisestusklahvi
+        await element.type("Puppeteer");
+        await new Promise(r => setTimeout(r, 500));
+        await page.keyboard.press("Enter");
+        await new Promise(r => setTimeout(r, 2000));
+        // Kontrollime, et lehekülje pealkirjas oleks sisestatud märksõna
+        assert.match(await page.title(), new RegExp(`Puppeteer\\s–\\s[A-Za-z0-9]+`));
+        // Veendume, et leheküljel oleks vähemalt 10 pilti
+        const imgCount = await page.evaluate(() => {
+            return document.querySelectorAll("img").length
+        })
+        assert.equal(imgCount >= 10, true);
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 (async () => {
@@ -106,8 +133,10 @@ const Test2 = async (page) => {
     const page = await browser.newPage();
     const timeout = 5000;
     page.setDefaultTimeout(timeout)
-    await Test1(page);
+    await page.goto("https://www.google.ee");
+    await Cookies(page);
+    //await Test1(page);
     await Test2(page);
 // Sule brauser
-    browser.close();
+    //browser.close();
 })();
