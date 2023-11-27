@@ -51,10 +51,9 @@ Sooritasin UI testid [Google](https://www.google.ee) jaoks. Testides kontrollita
 ## Tulemused
 
 ### Probleemid
-TBD
+- Puppeteer-is oli alguses keeruline aru saada .evaluate() tööpõhimõttest
+- Kui Google otsinguväljal "Enter" liiga kiiresti vajutada, ei pruugita käivitada otsingut, vaid minnakse järgmisele reale. Selle lahendasin lisades 500ms viivise enne sisestusklahvi vajutamist.
+- Keeruline oli testida filtrit "windows -os -microsoft", sest "os" sisaldub mitmetes teistes väljendites. Otsustasin selle asemel testida filtrit "puppeteer -testing".
 
 ### Testide kokkuvõta
-TBD
-
-### Ebaõnnestunud testid
-TBD
+Kõik testid läbiti edukalt
