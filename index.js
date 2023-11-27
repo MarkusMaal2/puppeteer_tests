@@ -117,7 +117,7 @@ const Test2 = async (page) => {
         await page.keyboard.press("Enter");
         await new Promise(r => setTimeout(r, 2000));
         // Kontrollime, et lehekülje pealkirjas oleks sisestatud märksõna
-        assert.match(await page.title(), new RegExp(`Puppeteer\\s–\\s[A-Za-z0-9]+`));
+        assert.equal(await page.title(), "Puppeteer – Google'i otsing");
         // Veendume, et leheküljel oleks vähemalt 10 pilti
         const imgCount = await page.evaluate(() => {
             return document.querySelectorAll("img").length
@@ -147,6 +147,27 @@ const Test3 = async (page) => {
             return document.body.innerText.match(/testing/g)?document.body.innerText.match(/testing/g).length:0
         })
         assert.equal(pCount <= 2, true);
+    } catch (err) {
+        console.log(err);
+    }
+
+    // 3.2 Tsitaatfiltri kasutamine
+    try {
+        // Külastame Google.ee lehte
+        await page.goto("https://www.google.ee");
+
+        // Leiame üles otsinguvälja
+        const element = await page.waitForSelector('textarea');
+        // Sisestame jutumärkidega "The quick brown fox jumps over the lazy dog." ja vajutame sisestusklahvi
+        await element.type("\"The quick brown fox jumps over the lazy dog.\"");
+        await new Promise(r => setTimeout(r, 500));
+        await page.keyboard.press("Enter");
+        await new Promise(r => setTimeout(r, 2000));
+        // Kontrollime, et fraas oleks tulemuste lehel lisaks pealkirjale ja otsinguväljale ka tulemuste loetelus
+        const pCount = await page.evaluate(() => {
+            return document.body.innerText.match(/The\squick\sbrown\sfox\sjumps\sover\sthe\slazy\sdog/g)?document.body.innerText.match(/The\squick\sbrown\sfox\sjumps\sover\sthe\slazy\sdog/g).length:0
+        })
+        assert.equal(pCount > 2, true);
     } catch (err) {
         console.log(err);
     }
