@@ -15,17 +15,15 @@ Sooritasin UI testid [Google](https://www.google.ee) jaoks. Testides kontrollita
         5. Laadime lehe uuesti
         6. Veendume, et küpsiste aken pole enam nähtaval
     * Märksõnaga otsimine - sisestades mingisuguse märksõna, peaksid ilmuma sellele vastavad otsingutulemused
-        1. Külastame Google.com lehte ja veendume, et see on korrektselt laaditud, seejärel nõustume küpsistega klõpsates "Nõustu kõigiga" nuppu
-        2. Leiame üles otsinguvälja
-        3. Sisestame märksõna "Puppeteer" ja vajutame sisestusklahvi
-        4. Kontrollime, et märksõna oleks veebilehe pealkirjas ja otsinguväljal
+        1. Leiame üles otsinguvälja
+        2. Sisestame märksõna "Puppeteer" ja vajutame sisestusklahvi
+        3. Kontrollime, et märksõna oleks veebilehe pealkirjas ja otsinguväljal
     * Otsingu tulemuse avamine - klõpsates mingisugusel otsingutulemusel peaksime väljuma Google veebirakendusest
-        1. Külastame Google.com lehte ja veendume, et see on korrektselt laaditud, seejärel nõustume küpsistega klõpsates "Nõustu kõigiga" nuppu
-        2. Leiame üles otsinguvälja
-        3. Sisestame märksõna "Puppeteer" ja vajutame sisestusklahvi
-        4. Kontrollime, et märksõna oleks veebilehe pealkirjas ja otsinguväljal
-        5. Klõpsame esimesel tulemusel
-        6. Veendume, et märksõnaga otsinguvälja poleks veebilehel ja Google poleks mainitud lehe pealkirjas
+        1. Leiame üles otsinguvälja
+        2. Sisestame märksõna "Puppeteer" ja vajutame sisestusklahvi
+        3. Kontrollime, et märksõna oleks veebilehe pealkirjas ja otsinguväljal
+        4. Klõpsame esimesel tulemusel
+        5. Veendume, et märksõnaga otsinguvälja poleks veebilehel ja Google poleks mainitud lehe pealkirjas
 2. Pildiotsing
     * Pildiotsingusse sisenemine - klõpsates "Pildid" siselingil peaksime jõudma "Google pildid" lehele
         1. Külastame Google.com lehte ja veendume, et see on korrektselt laaditud, seejärel nõustume küpsistega klõpsates "Nõustu kõigiga" nuppu
