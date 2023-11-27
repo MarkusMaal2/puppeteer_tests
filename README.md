@@ -26,11 +26,11 @@ Sooritasin UI testid [Google](https://www.google.ee) jaoks. Testides kontrollita
         5. Veendume, et Google poleks mainitud lehe pealkirjas
 2. Pildiotsing
     * Pildiotsingusse sisenemine - klõpsates "Pildid" siselingil peaksime jõudma "Google pildid" lehele
-        1. Külastame Google.com lehte ja veendume, et see on korrektselt laaditud, seejärel nõustume küpsistega klõpsates "Nõustu kõigiga" nuppu
+        1. Külastame Google.com lehte
         2. Leiame üles "Pildid" siselingi ja klõpsame seda
-        3. Veendume, et lehekülje pealkirjas oleks "Google pildid" ja "Otsige pildi järgi" nupp oleks nähtav
+        3. Veendume, et lehekülje pealkirjas oleks "Google pildid"
     * Märksõnaga otsimine - sisestades mingisuguse märksõna, peaksid ilmuma sellele vastavad pildid
-        1. Külastame Google.com lehte ja veendume, et see on korrektselt laaditud, seejärel nõustume küpsistega klõpsates "Nõustu kõigiga" nuppu
+        1. Külastame Google.com lehte
         2. Leiame üles "Pildid" siselingi ja klõpsame seda
         3. Leiame üles otsinguvälja
         4. Sisestame märksõna "Puppeteer" ja vajutame sisestusklahvi
@@ -38,12 +38,12 @@ Sooritasin UI testid [Google](https://www.google.ee) jaoks. Testides kontrollita
         6. Veendume, et leheküljel oleks nähtaval vähemalt 10 pilti
 3. Otsing filtritega
     * Välistava filtri kasutamine - sisestades mingi märksõna ning jättes teatud märksõnad välja lisades neile "-" prefiksi, ei tohiks otsingulehele jääda tulemusi, mis sisaldavad välistatud märksõnu
-        1. Külastame Google.com lehte ja veendume, et see on korrektselt laaditud, seejärel nõustume küpsistega klõpsates "Nõustu kõigiga" nuppu
+        1. Külastame Google.com lehte
         2. Leiame üles otsinguvälja
         3. Sisestame märksõnad "windows -os -microsoft" ja vajutame sisestusklahvi
         4. Veendume, et leheküljel ei ole märksõnu "os" ja "microsoft" v.a. pealkirjas ja otsinguväljal
     * Tsitaatfiltri kasutamine - sisestades märksõnad jutumärkide vahele, peaksid otsingulehel olevad tulemused sisaldama sisestatud tsitaati
-        1. Külastame Google.com lehte ja veendume, et see on korrektselt laaditud, seejärel nõustume küpsistega klõpsates "Nõustu kõigiga" nuppu
+        1. Külastame Google.com lehte
         2. Leiame üles otsinguvälja
         3. Sisestame jutumärkidega "The quick brown fox jumps over the lazy dog." ja vajutame sisestusklahvi
         4. Kontrollime, et fraas oleks tulemuste lehel lisaks pealkirjale ja otsinguväljale ka tulemuste loetelus
